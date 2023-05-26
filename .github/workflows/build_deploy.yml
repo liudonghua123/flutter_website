@@ -139,8 +139,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           distPath: ${{env.JEKYLL_BUILD_DIR}}
-          tagName: v__VERSION__
-          releaseName: "flutter.dev site v__VERSION__"
+          tagName: ${{github.ref_name}}
+          releaseName: ${{github.ref_name}}
           releaseBody: "See the assets to download this version and install."
           bundleIdentifier: dev.flutter.site
           args: -c custom-config.json
